@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Anamnese</title>
+</head>
+<body>
+    <header>
+        <h1>Ficha de Anamnese</h1>
+    </header>
+    <main>
+        <form action="/submit" method="post">
+            
+            <section>
+                <h2>Dados Pessoais</h2>
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required minlength="2" maxlength="100">
+                </div>
+                <div>
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </div>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-00">
+                </div>
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" placeholder="(99) 99999-9999">
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" maxlength="200">
+                </div>
+            </section>
+
+            
+            <section>
+                <h2>Histórico de Saúde</h2>
+                <div>
+                    <label for="alergias">Alergias:</label>
+                    <input type="text" id="alergias" name="alergias" required aria-label="Descreva suas alergias, ou deixe em branco se não houver">
+                </div>
+                <div>
+                    <h3>Doenças Crônicas</h3>
+                    <input type="checkbox" id="hipertensao" name="doencas" value="hipertensao">
+                    <label for="hipertensao">Hipertensão</label><br>
+                    <input type="checkbox" id="diabetes" name="doencas" value="diabetes">
+                    <label for="diabetes">Diabetes</label><br>
+                    <input type="checkbox" id="asma" name="doencas" value="asma">
+                    <label for="asma">Asma</label><br>
+                    <input type="checkbox" id="outras_doencas" name="doencas" value="outras">
+                    <label for="outras_doencas">Outras</label>
+                    <input type="text" id="outras_doencas_descricao" name="outras_doencas_descricao" placeholder="Descreva outras doenças">
+                </div>
+                <div>
+                    <h3>Medicamentos em Uso</h3>
+                    <div>
+                        <label for="medicamento1">Medicamento 1:</label>
+                        <input type="text" id="medicamento1" name="medicamento1" placeholder="Nome, dosagem, frequência">
+                    </div>
+                    <div>
+                        <label for="medicamento2">Medicamento 2:</label>
+                        <input type="text" id="medicamento2" name="medicamento2" placeholder="Nome, dosagem, frequência">
+                    </div>
+                    <div>
+                        <label for="medicamento3">Medicamento 3:</label>
+                        <input type="text" id="medicamento3" name="medicamento3" placeholder="Nome, dosagem, frequência">
+                    </div>
+                </div>
+                <div>
+                    <h3>Cirurgias/Internações Anteriores</h3>
+                    <div>
+                        <label for="cirurgia1">Cirurgia/Internação 1:</label>
+                        <input type="text" id="cirurgia1" name="cirurgia1" placeholder="Descreva (quais e quando)">
+                    </div>
+                    <div>
+                        <label for="cirurgia2">Cirurgia/Internação 2:</label>
+                        <input type="text" id="cirurgia2" name="cirurgia2" placeholder="Descreva (quais e quando)">
+                    </div>
+                    <div>
+                        <label for="cirurgia3">Cirurgia/Internação 3:</label>
+                        <input type="text" id="cirurgia3" name="cirurgia3" placeholder="Descreva (quais e quando)">
+                    </div>
+                </div>
+                <div>
+                    <label for="queixa">Queixa Principal:</label>
+                    <textarea id="queixa" name="queixa" rows="5" required aria-label="Descreva o motivo da consulta"></textarea>
+                </div>
+            </section>
+
+            
+            <section>
+                <h2>Hábitos e Estilo de Vida</h2>
+                <div>
+                    <label for="atividade_fisica">Atividade Física:</label>
+                    <select id="atividade_fisica" name="atividade_fisica" required>
+                        <option value="">Selecione</option>
+                        <option value="nenhuma">Nenhuma</option>
+                        <option value="leve">Leve</option>
+                        <option value="moderada">Moderada</option>
+                        <option value="intensa">Intensa</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Tabagismo</h3>
+                    <input type="radio" id="tabagismo_nao" name="tabagismo" value="nao" required>
+                    <label for="tabagismo_nao">Não</label><br>
+                    <input type="radio" id="tabagismo_sim" name="tabagismo" value="sim">
+                    <label for="tabagismo_sim">Sim</label><br>
+                    <input type="radio" id="tabagismo_ex" name="tabagismo" value="ex_fumante">
+                    <label for="tabagismo_ex">Ex-fumante</label>
+                </div>
+                <div>
+                    <h3>Etilismo</h3>
+                    <input type="radio" id="etilismo_nao" name="etilismo" value="nao" required>
+                    <label for="etilismo_nao">Não</label><br>
+                    <input type="radio" id="etilismo_social" name="etilismo" value="social">
+                    <label for="etilismo_social">Social</label><br>
+                    <input type="radio" id="etilismo_frequente" name="etilismo" value="frequente">
+                    <label for="etilismo_frequente">Frequente</label>
+                </div>
+                <div>
+                    <label for="sono">Qualidade do Sono:</label>
+                    <select id="sono" name="sono" required>
+                        <option value="">Selecione</option>
+                        <option value="ruim">Ruim</option>
+                        <option value="regular">Regular</option>
+                        <option value="boa">Boa</option>
+                        <option value="muito_boa">Muito boa</option>
+                    </select>
+                </div>
+            </section>
+
+            
+            <section>
+                <h2>Medições</h2>
+                <div>
+                    <label for="altura">Altura (cm):</label>
+                    <input type="number" id="altura" name="altura" min="50" max="250" step="0.1">
+                </div>
+                <div>
+                    <label for="peso">Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" min="1" max="300" step="0.1">
+                </div>
+                <div>
+                    <label for="pressao">Pressão Arterial (mmHg):</label>
+                    <input type="text" id="pressao" name="pressao" pattern="\d{2,3}/\d{2,3}" placeholder="120/80">
+                </div>
+                <div>
+                    <label for="frequencia">Frequência Cardíaca (bpm):</label>
+                    <input type="number" id="frequencia" name="frequencia" min="30" max="200">
+                </div>
+            </section>
+
+           
+            <section>
+                <h2>Consentimento</h2>
+                <div>
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos">Concordo com o uso dos meus dados</label>
+                </div>
+                <div>
+                    <label for="assinatura">Assinatura (Nome Completo):</label>
+                    <input type="text" id="assinatura" name="assinatura" required minlength="2" maxlength="100">
+                </div>
+                <div>
+                    <label for="data_assinatura">Data:</label>
+                    <input type="date" id="data_assinatura" name="data_assinatura" required>
+                </div>
+            </section>
+
+            
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Arthur César França do Nascimento. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
